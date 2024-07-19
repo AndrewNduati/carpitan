@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_18_125935) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_19_062137) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -85,6 +85,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_125935) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_legislations_on_user_id"
+  end
+
+  create_table "missing_people", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "last_seen_at"
+    t.string "last_seen_on"
+    t.string "datetime"
+    t.text "description"
+    t.string "found_at"
+    t.string "string"
+    t.text "found_description"
+    t.integer "contact_person"
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "noticed_events", force: :cascade do |t|

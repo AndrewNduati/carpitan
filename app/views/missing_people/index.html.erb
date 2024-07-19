@@ -1,0 +1,41 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Missing_people</h1>
+  </div>
+
+  <div class="col-sm-6 text-end">
+  <%= link_to new_missing_person_path, class: 'btn btn-primary' do %>
+    Add New Missing person
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @missing_people.each do |missing_person| %>
+        <%= content_tag :tr, id: dom_id(missing_person), class: dom_class(missing_person) do %>
+          
+
+          
+          
+            <td><%= link_to 'Show', missing_person %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
