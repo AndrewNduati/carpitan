@@ -1,5 +1,5 @@
 class MissingPeopleController < ApplicationController
-  before_action :set_missing_person, only: %i[ show edit update destroy ]
+  before_action :set_missing_person, only: %i[show edit update destroy]
 
   # GET /missing_people or /missing_people.json
   def index
@@ -58,13 +58,14 @@ class MissingPeopleController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_missing_person
-      @missing_person = MissingPerson.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def missing_person_params
-      params.fetch(:missing_person, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_missing_person
+    @missing_person = MissingPerson.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def missing_person_params
+    params.fetch(:missing_person).permit
+  end
 end

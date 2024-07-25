@@ -12,4 +12,5 @@ class User < ApplicationRecord
   has_many :businesses
   has_many :politicians
   has_many :legislations
+  has_many :missing_people
 end
